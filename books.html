@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library | FES</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js"></script>
+    <script src="./books.js"></script>
+</head>
+<body id="books__body">
+    <nav class="site-nav">
+        <div class="container">
+            <a href="./index.html"><img src="./assets/Library.svg" class="site-logo" alt="Library logo"></a>
+            <ul class="nav__links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#" class="no-cursor">Contact</a></li>
+                <li><a href="#features" class="nav__link--primary">Books</a></li>
+            </ul>
+            <button class="site-nav__mobile--btn" onclick="openMenu()">
+                <img src="./assets/icon-menu-bars.svg" alt="Open mobile nav menu">
+            </button>
+            <div class="site-nav__mobile--wrapper">
+                <div class="container">
+                    <button class="site-nav__mobile--btn site-nav__mobile--close" onclick="closeMenu()">
+                        <img src="./assets/icon-close.svg" alt="Close mobile nav menu">
+                    </button>
+                    <ul class="site-nav__links--mobile
+                    ">
+                        <li><a href="#" onclick="closeMenu()">Home</a></li>
+                        <li><a href="#features" onclick="closeMenu()">Books</a></li>
+                        <li><a href="#" class="no-cursor" onclick="closeMenu()">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section id="all">
+            <div class="container">
+                <div class="books__heading">
+                    <h2 class="section__title">All <span class="text--purple">Books</span></h2>
+                    <select onchange="filterBooks(event)">
+                        <option value="" disabled selected>Sort</option>
+                        <option value="LOW_TO_HIGH">Price, Low to High</option>
+                        <option value="HIGH_TO_LOW">Price, High to Low</option>
+                        <option value="RATING">Rating</option>
+                    </select>
+                </div>
+                <div class="books__loading loading">
+                    <img src="./assets/icon-loading.svg" alt="">
+                </div>
+                <div class="books__grid"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="logo">
+                <a href="#">
+                    <img src="./assets/Library-white.svg" class="site-logo" alt="Library logo">
+                    <span class="footer__logo--popper">To Top</span>
+                </a>
+            </div>
+            <div class="footer__links--list">
+                <a href="#">Home</a>
+                <a href="#" class="no-cursor">About</a>
+                <a href="#features">Books</a>
+                <a href="#" class="no-cursor">Contact</a>
+            </div>
+            <div class="footer__copyright">Copyright &copy; 2025 Library</div>
+        </div>
+    </footer>
+</body>
+
+</html>

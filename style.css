@@ -13,6 +13,15 @@
 html {
     scroll-behavior: smooth;
 }
+body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex-grow: 1;
+}
 .menu--open {
     max-height: 100vh;
     overflow-y: hidden;
@@ -76,6 +85,7 @@ img {
     cursor: not-allowed;
 }
 
+
 /**
 * NAVIGATION BAR
 **/
@@ -87,6 +97,10 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.site-nav .container > a {
+    display: inline-block;
+    line-height: 0;
 }
 .site-logo {
     width: 160px;
@@ -114,6 +128,7 @@ img {
 .site-nav .nav__links .nav__link--primary:hover {
     text-decoration: none;
 }
+
 
 /**
 * MOBILE NAVIGATION
@@ -178,6 +193,7 @@ img {
     padding: 32px 0;
 }
 
+
 /**
 * HERO
 **/
@@ -204,6 +220,7 @@ header .header__image--wrapper img {
     height: 100%;
     max-height: 50vh;
 }
+
 
 /**
 * HIGHLIGHTS
@@ -260,6 +277,7 @@ header .header__image--wrapper img {
     margin-right: auto;
 }
 
+
 /**
 * FEATURES
 **/
@@ -267,51 +285,52 @@ header .header__image--wrapper img {
     background-color: rgba(115, 66, 214, 0.1);
     padding-top: 12vw;
 }
-#features .books__grid, #latest .books__grid {
+#features .books__grid, #latest .books__grid, #all .books__grid {
     display: flex;
     flex-wrap: wrap;
 }
-#features .book, #latest .book {
+#features .book, #latest .book, #all .book {
     width: 25%;
     padding: 24px;
 }
-#features .book__image--wrapper, #latest .book__image--wrapper {
+#features .book__image--wrapper, #latest .book__image--wrapper, #all .book__image--wrapper {
     display: flex;
     margin-bottom: 8px;
     border-radius: 4px;
     overflow: hidden;
 }
-#features .book__image--wrapper img, #latest .book__image--wrapper img {
+#features .book__image--wrapper img, #latest .book__image--wrapper img, #all .book__image--wrapper img {
     max-height: 380px;
     transition: all 0.3s ease;
     cursor: not-allowed;
     object-fit: contain;
     object-position: left;
 }
-#features .book:hover .book__image--wrapper img, #latest .book:hover .book__image--wrapper img {
+#features .book:hover .book__image--wrapper img, #latest .book:hover .book__image--wrapper img, #all .book:hover .book__image--wrapper img {
     transform: scale(1.03);
 }
-#features .book h3:hover, #latest .book h3:hover {
+#features .book h3:hover, #latest .book h3:hover, #all .book h3:hover {
     text-decoration: underline;
     cursor: not-allowed;
 }
-#features .book .book__rating, #latest .book .book__rating {
+#features .book .book__rating, #latest .book .book__rating, #all .book .book__rating {
     display: flex;
     justify-content: flex-start;
     margin-bottom: 8px;
 }
-#features .book .book__rating img, #latest .book .book__rating img {
+#features .book .book__rating img, #latest .book .book__rating img, #all .book .book__rating img {
     width: auto;
     height: 16px;
     margin-right: 3px;
 }
-#features .book .book__price--normal {
+#features .book .book__price--normal, #all .book .book__price--normal {
     text-decoration: line-through;
     color: #bfbfbf;
 }
-#features .book .book__price--discount {
+#features .book .book__price--discount, #all .book .book__price--discount {
     margin-left: 4px;
 }
+
 
 /**
 * EXPLORE
@@ -320,6 +339,40 @@ header .header__image--wrapper img {
     background-color: rgba(115, 66, 214, 0.1);
     text-align: center;
 }
+
+
+/**
+* ALL BOOKS
+**/
+#all .books__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+#all .books__loading {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+}
+#all .books__loading.loading {
+    display: flex;
+}
+#all .books__loading img {
+    height: 40px;
+    width: auto;
+    animation: spin 0.6s infinite linear;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 /**
 * FOOTER
@@ -364,6 +417,7 @@ footer .logo a:hover .footer__logo--popper {
     max-width: 400px;
     margin: 0 auto 24px;
 }
+
 
 /**
 * RESPONSIVE
